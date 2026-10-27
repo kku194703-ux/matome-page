@@ -1,0 +1,810 @@
+
+/* =========================
+   BASIC
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #333333;
+    font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    width: 100%;
+    height: 76px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #333333;
+}
+
+.header-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a77b32;
+}
+
+/* =========================
+   HERO
+========================= */
+
+/* 追記 */
+.hero {
+    padding: 95px 20px 90px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #888888 0%,
+        #c0c0c0 35%,
+        #eeeeee 70%,
+        #ffffff 100%
+    );
+}
+
+.hero-label,
+.section-label,
+.banner-label {
+    margin: 0 0 12px;
+    color: #a77b32;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+/* hero description */
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 320px;
+    padding: 65px 20px 70px;
+    text-align: center;
+    overflow: hidden;
+
+    /* グレーから白へのグラデーション */
+    background: linear-gradient(
+        110deg,
+        #a9a9a9 0%,
+        #d0d0d0 30%,
+        #ededed 65%,
+        #ffffff 100%
+    );
+}
+
+/* 英字ラベル */
+.hero .lead {
+    margin: 0 0 12px;
+    color: #a77b32;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* メインタイトル */
+.hero h1 {
+    display: inline-block;
+    margin: 8px 0 20px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #333333;
+
+    background: linear-gradient(
+        90deg,
+        #24364b 0%,
+        #a77b32 50%,
+        #24364b 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+    animation:
+        fadeUp 1s ease forwards,
+        titleShine 6s ease-in-out infinite;
+    animation-delay: 0.4s, 1.4s;
+}
+
+/* タイトル下の飾り線 */
+.hero-decoration,
+.heading-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 20px;
+}
+
+.hero-decoration span:not(.hero-diamond),
+.heading-decoration span:not(.decoration-diamond) {
+    display: block;
+    width: 55px;
+    height: 1px;
+    background: #a77b32;
+}
+
+.hero-diamond,
+.decoration-diamond {
+    color: #a77b32;
+    font-size: 12px;
+}
+
+/* メインの説明文 */
+.hero .hero-description {
+    margin: 0;
+    color: #444444;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+/* 英語のサブコピー */
+.hero .hero-sub {
+    margin: 8px 0 0;
+    color: #777777;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* 店舗一覧の見出し下の飾り */
+.heading-decoration {
+    margin: 14px auto 16px;
+}
+
+/* 下から浮き上がるアニメーション */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* タイトルの色がゆっくり動く */
+@keyframes titleShine {
+    0%, 100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+    .hero {
+        min-height: auto;
+        padding: 55px 16px 60px;
+    }
+
+    .hero .lead {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        margin: 8px 0 18px;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .hero .hero-description {
+        font-size: 13px;
+    }
+
+    .hero .hero-sub {
+        font-size: 10px;
+    }
+
+    .hero-decoration span:not(.hero-diamond),
+    .heading-decoration span:not(.decoration-diamond) {
+        width: 38px;
+    }
+}
+
+/* 動きを抑える設定 */
+@media (prefers-reduced-motion: reduce) {
+    .hero .lead,
+    .hero h1,
+    .hero .hero-description,
+    .hero .hero-sub {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+/* 英字ラベル */
+.hero .lead {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #a77b32;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* メインタイトル */
+.hero h1 {
+    display: inline-block;
+    margin: 10px 0 24px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #24364b 0%,
+        #a77b32 50%,
+        #24364b 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+    animation:
+        fadeUp 1s ease forwards,
+        titleShine 6s ease-in-out infinite;
+    animation-delay: 0.5s, 1.5s;
+}
+
+/* 説明文 */
+.hero .description {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 2.2;
+    letter-spacing: 0.5px;
+
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 1.1s;
+}
+
+/* 下から浮き上がる */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* タイトルのグラデーションが動く */
+@keyframes titleShine {
+    0%, 100% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+    .hero {
+        padding: 55px 16px;
+    }
+
+    .hero h1 {
+        letter-spacing: 1px;
+    }
+
+    .hero .description {
+        font-size: 13px;
+    }
+}
+
+/* 動きを抑える設定 */
+@media (prefers-reduced-motion: reduce) {
+    .hero .lead,
+    .hero h1,
+    .hero .description {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================
+   PARTNER SECTION
+========================= */
+.partner-section {
+    width: 88%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 85px 0 100px;
+}
+
+.section-heading {
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.section-heading .section-label {
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.section-description {
+    margin: 12px 0 0;
+    color: #777777;
+    font-size: 14px;
+}
+
+/* =========================
+   PARTNER CARD GRID
+========================= */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+    align-items: stretch;
+}
+
+.partner-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e9e5dd;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+.partner-image-link {
+    display: block;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: #f0eee9;
+}
+
+.partner-image-link img {
+    transition: transform 0.5s ease;
+}
+
+.partner-card:hover .partner-image-link img {
+    transform: scale(1.04);
+}
+
+.image-label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    padding: 5px 12px;
+    background: #ffffff;
+    color: #a77b32;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.partner-content {
+    padding: 25px 27px 28px;
+}
+
+.partner-category {
+    margin: 0 0 6px;
+    color: #a77b32;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.partner-content h3 {
+    margin: 0 0 14px;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.partner-description {
+    min-height: 78px;
+    margin: 0 0 22px;
+    color: #666666;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* =========================
+   SHOP INFORMATION
+========================= */
+.partner-info {
+    padding: 15px 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.partner-info p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 4px 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.partner-info span {
+    flex: 0 0 95px;
+    color: #a77b32;
+}
+
+/* =========================
+   DETAIL BUTTON
+========================= */
+.detail-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 22px;
+    padding: 13px 17px;
+    border: 1px solid #a77b32;
+    color: #8e6729;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: background 0.3s ease,
+                color 0.3s ease;
+}
+
+.detail-button span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.detail-button:hover {
+    background: #a77b32;
+    color: #ffffff;
+}
+
+.detail-button:hover span {
+    transform: translateX(4px);
+}
+
+/* =========================
+   ALL SHOP NAMES
+========================= */
+.shop-name-list {
+    margin-top: 80px;
+    padding-top: 55px;
+    border-top: 1px solid #e9e5dd;
+}
+
+.shop-list-heading {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.shop-list-heading .section-label {
+    margin-bottom: 8px;
+}
+
+.shop-list-heading h2 {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.shop-list-heading > p:last-child {
+    margin: 10px 0 0;
+    color: #777777;
+    font-size: 13px;
+}
+
+.shop-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #e9e5dd;
+}
+
+.shop-list li {
+    border-bottom: 1px solid #e9e5dd;
+}
+
+.shop-list li a {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 18px;
+    transition: background 0.3s ease;
+}
+
+.shop-list li a:hover {
+    background: #f8f7f4;
+}
+
+.shop-number {
+    flex: 0 0 25px;
+    color: #a77b32;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.shop-name {
+    flex: 1;
+    min-width: 0;
+    color: #333333;
+    font-size: 15px;
+}
+
+.shop-arrow {
+    color: #a77b32;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.shop-list li a:hover .shop-arrow {
+    transform: translateX(5px);
+}
+
+/* =========================
+   BANNER
+========================= */
+.partner-banner {
+    padding: 75px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #888888 0%,
+        #c0c0c0 35%,
+        #eeeeee 70%,
+        #ffffff 100%
+    );
+}
+
+
+
+.partner-banner h2 {
+    margin: 0;
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+.partner-banner > p:last-child {
+    margin: 18px 0 0;
+    color: #666666;
+    font-size: 13px;
+    line-height: 2.2;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    color: #888888;
+    font-size: 11px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 800px) {
+    .partner-section {
+        width: 90%;
+        padding: 65px 0 80px;
+    }
+
+    .partner-grid {
+        gap: 22px;
+    }
+
+    .partner-image-link {
+        height: 210px;
+    }
+
+    .partner-content {
+        padding: 20px;
+    }
+
+    .partner-content h3 {
+        font-size: 20px;
+    }
+
+    .partner-info span {
+        flex-basis: 85px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+    .header {
+        height: 65px;
+        padding: 0 6%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .header-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        padding: 70px 18px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .partner-section {
+        width: 90%;
+        padding: 60px 0 75px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .partner-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .partner-image-link {
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    .partner-content {
+        padding: 22px;
+    }
+
+    .partner-content h3 {
+        font-size: 22px;
+    }
+
+    .partner-description {
+        min-height: 0;
+    }
+
+    .shop-name-list {
+        margin-top: 55px;
+        padding-top: 40px;
+    }
+
+    .shop-list-heading h2 {
+        font-size: 24px;
+    }
+
+    .shop-list li a {
+        gap: 14px;
+        padding: 18px 10px;
+    }
+
+    .shop-name {
+        font-size: 13px;
+    }
+
+    .partner-banner {
+        padding: 60px 18px;
+    }
+
+    .footer {
+        padding: 22px 6%;
+    }
+}
