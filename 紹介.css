@@ -423,24 +423,54 @@ h2 {
     color: #ffffff;
 }
 
+
 /* FOOTER */
 .footer {
     padding: 35px 5%;
     text-align: center;
-    background: #f7f7f5;
+    background: linear-gradient(
+        90deg,
+        #101516 0%,
+        #343331 55%,
+        #9a8060 100%
+    );
     border-top: 1px solid #eeeeee;
 }
 
 .footer p:first-child {
-    color: #a77b32;
+    color: #d6b16b;
     font-size: 11px;
     letter-spacing: 3px;
 }
 
 .footer p:last-child {
-    color: #666666;
+    color: #ffffff;
     font-size: 13px;
 }
+
+/* phone area */
+
+a.phone-link {
+    color: #333333 !important;
+    text-decoration: none;
+}
+
+a.phone-link:active {
+    color: #a77b32 !important;
+}
+
+/* PHOTO */
+/* すべての写真にホバー効果 */
+img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.85);
+}
+
 
 /* MOBILE */
 @media (max-width: 700px) {
@@ -469,5 +499,3 @@ h2 {
     .intro {
         padding: 65px 0;
     }
-
-   
