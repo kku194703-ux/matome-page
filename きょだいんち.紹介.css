@@ -1,0 +1,474 @@
+```css
+/* BASIC */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #333333;
+    font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+    line-height: 1.8;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-inner {
+    width: 88%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.section-label {
+    color: #a77b32;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0 0 8px;
+}
+
+h2 {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 34px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin: 0 0 20px;
+    color: #222222;
+}
+
+/* HEADER */
+.header {
+    min-height: 76px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #222222;
+}
+
+.header-label {
+    color: #a77b32;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* HERO：グラデーション背景 */
+.hero {
+    position: relative;
+    min-height: 460px;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(
+        115deg,
+        #101719 0%,
+        #20282b 38%,
+        #55504a 72%,
+        #b18a55 100%
+    );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.16) 65%,
+        rgba(0, 0, 0, 0.02) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 82%;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.eyebrow {
+    color: #e3bd7a;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin: 0 0 28px;
+}
+
+.hero h1 {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.65;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    margin: 0 0 20px;
+    color: #ffffff;
+}
+
+.hero-description {
+    color: #f0f0ed;
+    font-size: clamp(13px, 1.3vw, 16px);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+
+/* INTRODUCTION */
+.intro {
+    padding: 110px 0;
+    background: #ffffff;
+}
+
+.intro > .section-inner > .section-label,
+.intro > .section-inner > h2 {
+    text-align: center;
+}
+
+/* SHOP INTRODUCTION */
+.shop-introduction {
+    display: flow-root;
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto 0;
+    text-align: left;
+}
+
+/* お店の魅力：見出し */
+.shop-introduction h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* 写真 */
+.shop-description-image {
+    float: left;
+    width: 420px;
+    height: 280px;
+    margin: 0 35px 20px 0;
+    overflow: hidden;
+}
+
+.shop-description-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 紹介文 */
+.shop-introduction p {
+    font-size: 17px;
+    line-height: 2;
+}
+
+.shop-description-image {
+    float: left;
+    width: 400px;
+    height: 267px;
+    margin: 0 28px 15px 0;
+    overflow: hidden;
+}
+
+.shop-description-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+/* RECOMMEND：2枠 */
+.menu-section {
+    background: #f7f7f5;
+    padding: 85px 0 100px;
+}
+
+.section-description {
+    color: #666666;
+    font-size: 13px;
+    margin: -8px 0 35px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.menu-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e9e6df;
+}
+
+.menu-card > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+}
+
+.menu-content {
+    padding: 22px;
+}
+
+.menu-number {
+    color: #a77b32;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+}
+
+.menu-content h3 {
+    font-size: 19px;
+    line-height: 1.6;
+    margin: 8px 0 10px;
+    color: #292929;
+}
+
+.menu-content > p:not(.menu-number):not(.price) {
+    color: #666666;
+    font-size: 13px;
+}
+
+/* SHOP STORY */
+.story {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #ffffff;
+}
+
+.story-image img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+}
+
+.story-content p:last-child {
+    color: #666666;
+    font-size: 14px;
+}
+
+/* COLLABORATION：コラボ内容＋動画の2枠 */
+.offer {
+    background: linear-gradient(
+        120deg,
+        #f4f1e9 0%,
+        #ffffff 48%,
+        #e8e0d1 100%
+    );
+    padding: 85px 20px;
+    text-align: center;
+}
+
+.offer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.offer-inner > .section-label,
+.offer-inner > h2 {
+    text-align: center;
+}
+
+.offer-lead {
+    color: #555555;
+    font-size: 14px;
+    margin: 0 0 35px;
+}
+
+.collaboration-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+    align-items: stretch;
+}
+
+.collaboration-card {
+    min-width: 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #e5dfd3;
+}
+
+.offer-caption {
+    color: #a77b32;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin: 0 0 12px;
+}
+
+.collaboration-card h3 {
+    margin: 0 0 20px;
+    color: #292929;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+.collaboration-text {
+    margin: 0;
+    color: #555555;
+    font-size: 14px;
+    line-height: 2.1;
+    white-space: pre-line;
+}
+
+/* INTRODUCTION MOVIE */
+.collaboration-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.collaboration-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-caption {
+    margin: 12px 0 0;
+    color: #666666;
+    font-size: 13px;
+}
+
+/* SHOP INFORMATION */
+.shop-info {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.shop-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.shop-info th,
+.shop-info td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+}
+
+.shop-info th {
+    width: 25%;
+    color: #a77b32;
+    font-weight: normal;
+    background: #f7f7f5;
+}
+
+.shop-info td {
+    color: #555555;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 25px;
+    border: 1px solid #a77b32;
+    color: #a77b32;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.map-button:hover {
+    background: #a77b32;
+    color: #ffffff;
+}
+
+/* FOOTER */
+.footer {
+    padding: 35px 5%;
+    text-align: center;
+    background: #f7f7f5;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer p:first-child {
+    color: #a77b32;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.footer p:last-child {
+    color: #666666;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .header {
+        min-height: 66px;
+        padding: 0 5%;
+    }
+
+    .hero {
+        height: 460px;
+        min-height: 400px;
+    }
+
+    .hero-content {
+        width: 86%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 29px;
+    }
+
+    .intro {
+        padding: 65px 0;
+    }
+
+   
