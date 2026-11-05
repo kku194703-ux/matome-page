@@ -30,32 +30,80 @@ img {
     object-fit: cover;
 }
 
-/* =========================
-   HEADER
-========================= */
-.header {
-    width: 100%;
-    height: 76px;
-    padding: 0 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eeeeee;
-    background: #ffffff;
+
+/* BLACK HEADER */
+.site-header {
+  width: 100%;
+  background: #111111;
+  border-bottom: 1px solid #333333;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
 .logo {
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #333333;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 
-.header-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #a77b32;
+.logo span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #FFFFFF;
 }
+
+/* MENU */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  transition: opacity .3s;
+}
+
+.header-nav a:hover {
+  opacity: 0.65;
+}
+
+/* HAMBURGER */
+.menu-toggle span {
+  background: #FFFFFF;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header-nav {
+    background: #111111;
+  }
+
+  .header-nav a {
+    color: #FFFFFF;
+    border-bottom: 1px solid #333333;
+  }
+}
+
+
+
 
 /* =========================
    HERO
