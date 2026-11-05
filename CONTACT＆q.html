@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | IWAKI LOCAL GUIDE</title>
+<link rel="stylesheet" href="CONTACT＆q.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="まとめページ.html" class="logo">
+      IWAKI
+      <span>LOCAL GUIDE</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header-nav" id="headerNav">
+      <a href="まとめページ.html">TOP</a>
+      <a href="まとめページ.html#shop">店舗紹介</a>
+      <a href="まとめページ.html#benefit">お得な特典</a>
+      <a href="まとめページ.html#event">いわきイベント</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="contact-hero">
+  <p>CONTACT</p>
+  <h1>お問い合わせ</h1>
+  <div class="sub">ご質問・ご相談はこちらから</div>
+</section>
+
+<main class="contact-container">
+
+  <div class="contact-intro">
+    当サイトに関するご質問や掲載店舗についてのご相談など、<br>
+    下記フォームよりお気軽にお問い合わせください。
+  </div>
+
+  <form id="contactForm">
+
+    <div class="form-group">
+      <label>お名前 <span class="required">必須</span></label>
+      <input type="text" name="name"
+        placeholder="お名前を入力してください" required>
+    </div>
+
+    <div class="form-group">
+      <label>メールアドレス <span class="required">必須</span></label>
+      <input type="email" name="email"
+        placeholder="example@email.com" required>
+    </div>
+
+    <div class="form-group">
+      <label>お問い合わせ種別</label>
+      <select name="category">
+        <option value="">選択してください</option>
+        <option>掲載店舗について</option>
+        <option>広告・協賛について</option>
+        <option>サイトについて</option>
+        <option>その他のお問い合わせ</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>お問い合わせ内容 <span class="required">必須</span></label>
+      <textarea name="message"
+        placeholder="お問い合わせ内容をご入力ください"
+        required></textarea>
+    </div>
+
+    <div class="submit-area">
+      <button type="submit" class="submit-button">
+        送信する →
+      </button>
+    </div>
+
+  </form>
+</main>
+
+<footer class="footer">
+  <p>IWAKI LOCAL GUIDE</p>
+  <p>© IWAKI LOCAL GUIDE. All Rights Reserved.</p>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const headerNav = document.getElementById("headerNav");
+
+menuToggle.addEventListener("click", () => {
+  headerNav.classList.toggle("active");
+});
+
+headerNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    headerNav.classList.remove("active");
+  });
+});
+
+// メールソフトを起動して送信
+document.getElementById("contactForm")
+.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = new FormData(this);
+
+  const subject = "お問い合わせ";
+  const body =
+    "お名前：" + data.get("name") + "\n" +
+    "メールアドレス：" + data.get("email") + "\n" +
+    "お問い合わせ種別：" + data.get("category") + "\n\n" +
+    "お問い合わせ内容：\n" + data.get("message");
+
+  const address = "your-email@example.com";
+
+  window.location.href =
+    "mailto:" + address +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+});
+</script>
+
+</body>
+</html>
