@@ -541,6 +541,8 @@ img {
    BANNER
 ========================= */
 .partner-banner {
+   overflow: hidden;
+    width: 100%;
     padding: 75px 20px;
     text-align: center;
     background: linear-gradient(
@@ -549,9 +551,8 @@ img {
         #c0c0c0 35%,
         #eeeeee 70%,
         #ffffff 100%
-    );
+    );    
 }
-
 
 
 .partner-banner h2 {
