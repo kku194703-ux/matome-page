@@ -15,7 +15,7 @@ headerNav.querySelectorAll("a").forEach(link => {
 
 
 /* PARTNER PROJECTの文字を左から右へ流す */
-.footer-message {
+.partner-banne {
     animation: slideText 8s linear infinite;
     white-space: nowrap;
 }
