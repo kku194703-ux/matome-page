@@ -265,11 +265,11 @@ h2 {
     padding: 85px 0 100px;
 }
 
-/* RECOMMEND：3枠横並び */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+/* RECOMMEND：3枠横並びを優先 */
+.menu-section .menu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px;
     width: 100%;
 }
 
