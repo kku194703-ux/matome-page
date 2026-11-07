@@ -265,6 +265,20 @@ h2 {
     padding: 85px 0 100px;
 }
 
+/* RECOMMEND：3枠横並び */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .section-description {
     color: #666666;
     font-size: 13px;
