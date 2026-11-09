@@ -557,15 +557,83 @@ img:hover {
 
 
 
-
 /* =========================
-   RECOMMEND：スマホ表示
+   MOBILE：スマホ表示設定
 ========================= */
 @media (max-width: 700px) {
 
+    /* HEADER */
+    .header {
+        min-height: 66px;
+        padding: 0 5%;
+    }
+
+    .site-header {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .header-inner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .header-nav {
+        background: #111111;
+    }
+
+    .header-nav a {
+        color: #FFFFFF;
+        border-bottom: 1px solid #333333;
+        white-space: nowrap;
+    }
+
+    /* HERO */
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        height: 460px;
+        min-height: 400px;
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        width: 86%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    /* HEADING */
+    h2 {
+        font-size: 29px;
+    }
+
+    /* INTRO */
+    .intro {
+        padding: 65px 0;
+    }
+
+    .section-inner {
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .intro img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* RECOMMEND */
     .menu-section .menu-grid {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-columns: 1fr !important;
         gap: 25px;
         width: 100%;
     }
@@ -589,16 +657,7 @@ img:hover {
         overflow-wrap: break-word;
     }
 
-}
-
-
-
-    /* =========================
-   SPECIAL COLLABORATION
-   スマホ1列表示
-========================= */
-@media (max-width: 700px) {
-
+    /* SPECIAL COLLABORATION */
     .collaboration-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -619,12 +678,7 @@ img:hover {
 
 }
 
-
-
-
-/* =========================
-   MOBILE：横幅のずれ修正
-========================= */
+/* MOBILE：横幅調整 */
 @media (max-width: 768px) {
 
     html, body {
@@ -633,56 +687,8 @@ img:hover {
         overflow-x: hidden;
     }
 
-    .hero {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 460px;
-        box-sizing: border-box;
-    }
-
-    .section-inner {
-        width: 90%;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
-    }
-
-    .intro img {
-        max-width: 100%;
-        height: auto;
-    }
-
 }
 
 
 
-
-
-
-/* =========================
-   MOBILE HEADER
-========================= */
-@media (max-width: 768px) {
-
-    .site-header {
-        width: 100%;
-        height: auto;
-        min-height: 70px;
-        padding: 15px 5%;
-        box-sizing: border-box;
-    }
-
-    .header-inner {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header-nav {
-        display: none;
-    }
-
-}
+    
