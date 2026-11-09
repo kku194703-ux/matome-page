@@ -618,3 +618,40 @@ img:hover {
     }
 
 }
+
+
+
+
+/* =========================
+   MOBILE：横幅のずれ修正
+========================= */
+@media (max-width: 768px) {
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 460px;
+        box-sizing: border-box;
+    }
+
+    .section-inner {
+        width: 90%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .intro img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
