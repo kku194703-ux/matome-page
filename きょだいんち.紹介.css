@@ -655,3 +655,34 @@ img:hover {
     }
 
 }
+
+
+
+
+
+
+/* =========================
+   MOBILE HEADER
+========================= */
+@media (max-width: 768px) {
+
+    .site-header {
+        width: 100%;
+        height: auto;
+        min-height: 70px;
+        padding: 15px 5%;
+        box-sizing: border-box;
+    }
+
+    .header-inner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+}
