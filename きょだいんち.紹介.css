@@ -590,3 +590,31 @@ img:hover {
     }
 
 }
+
+
+
+    /* =========================
+   SPECIAL COLLABORATION
+   スマホ1列表示
+========================= */
+@media (max-width: 700px) {
+
+    .collaboration-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .collaboration-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .collaboration-card * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
