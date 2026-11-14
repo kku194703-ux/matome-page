@@ -245,23 +245,26 @@ h2 {
 }
 
 
+/* =========================
+   RECOMMEND
+========================= */
 
-/* RECOMMEND：2枠 */
 .menu-section {
     background: #f7f7f5;
     padding: 85px 0 100px;
+}
+
+.menu-section .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
 .section-description {
     color: #666666;
     font-size: 13px;
     margin: -8px 0 35px;
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
 }
 
 .menu-card {
@@ -302,7 +305,11 @@ h2 {
     font-size: 13px;
 }
 
-/* SHOP STORY */
+
+/* =========================
+   SHOP STORY
+========================= */
+
 .story {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -323,7 +330,11 @@ h2 {
     font-size: 14px;
 }
 
-/* COLLABORATION：コラボ内容＋動画の2枠 */
+
+/* =========================
+   COLLABORATION
+========================= */
+
 .offer {
     background: linear-gradient(
         120deg,
@@ -331,6 +342,7 @@ h2 {
         #ffffff 48%,
         #e8e0d1 100%
     );
+
     padding: 85px 20px;
     text-align: center;
 }
@@ -389,7 +401,11 @@ h2 {
     white-space: pre-line;
 }
 
-/* INTRODUCTION MOVIE */
+
+/* =========================
+   INTRODUCTION MOVIE
+========================= */
+
 .collaboration-video {
     position: relative;
     width: 100%;
@@ -412,7 +428,11 @@ h2 {
     font-size: 13px;
 }
 
-/* SHOP INFORMATION */
+
+/* =========================
+   SHOP INFORMATION
+========================= */
+
 .shop-info {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -458,16 +478,22 @@ h2 {
     color: #ffffff;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
     padding: 35px 5%;
     text-align: center;
+
     background: linear-gradient(
         90deg,
         #101516 0%,
         #343331 55%,
         #9a8060 100%
     );
+
     border-top: 1px solid #eeeeee;
 }
 
@@ -482,7 +508,10 @@ h2 {
     font-size: 13px;
 }
 
-/* phone area */
+
+/* =========================
+   PHONE
+========================= */
 
 a.phone-link {
     color: #333333 !important;
@@ -493,8 +522,11 @@ a.phone-link:active {
     color: #a77b32 !important;
 }
 
-/* PHOTO */
-/* すべての写真にホバー効果 */
+
+/* =========================
+   PHOTO
+========================= */
+
 img {
     transition: transform 0.4s ease, filter 0.4s ease;
     cursor: pointer;
@@ -505,30 +537,242 @@ img:hover {
     filter: brightness(0.85);
 }
 
-/* MOBILE */
+
+/* ==================================================
+   MOBILE：スマートフォン表示
+================================================== */
+
 @media (max-width: 700px) {
-    .header {
+
+    /* HEADER */
+
+    .site-header {
+        width: 100%;
         min-height: 66px;
-        padding: 0 5%;
     }
 
+    .header-inner {
+        width: 100%;
+        min-height: 66px;
+        padding: 12px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .header-nav {
+        background: #111111;
+        gap: 12px;
+    }
+
+    .header-nav a {
+        color: #FFFFFF;
+        border-bottom: 1px solid #333333;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    /* HERO */
+
     .hero {
+        width: 100%;
+        max-width: 100%;
         height: 460px;
         min-height: 400px;
     }
 
     .hero-content {
-        width: 86%;
+        width: 90%;
     }
 
     .hero h1 {
         font-size: 32px;
     }
 
+    .eyebrow {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    /* HEADING */
+
     h2 {
         font-size: 29px;
     }
 
+    /* INTRO */
+
     .intro {
         padding: 65px 0;
     }
+
+    .section-inner {
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* SHOP INTRODUCTION */
+
+    .shop-introduction {
+        width: 100%;
+        margin: 35px auto 0;
+    }
+
+    .shop-introduction h2 {
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .shop-description-image {
+        float: none;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        margin: 0 0 20px;
+    }
+
+    .shop-description-image img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .shop-introduction p {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    /* RECOMMEND */
+
+    .menu-section {
+        padding: 65px 0;
+    }
+
+    .menu-section .menu-grid {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .menu-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .menu-card > img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    .menu-content {
+        padding: 20px;
+    }
+
+    /* SHOP STORY */
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    /* COLLABORATION */
+
+    .offer {
+        padding: 65px 5%;
+    }
+
+    .offer-inner {
+        width: 100%;
+    }
+
+    .collaboration-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        width: 100%;
+    }
+
+    .collaboration-card {
+        width: 100%;
+        min-width: 0;
+        padding: 22px;
+    }
+
+    .collaboration-card h3 {
+        font-size: 20px;
+    }
+
+    .collaboration-text {
+        font-size: 14px;
+    }
+
+    /* SHOP INFORMATION */
+
+    .shop-info {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .shop-info th,
+    .shop-info td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .shop-info th {
+        width: 30%;
+    }
+
+    /* FOOTER */
+
+    .footer {
+        padding: 30px 5%;
+    }
+
+    /* PHONE */
+
+    a.phone-link {
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE：共通横幅調整
+================================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .hero,
+    .intro,
+    .menu-section,
+    .offer,
+    .shop-info,
+    .footer {
+        max-width: 100%;
+    }
+
+}
