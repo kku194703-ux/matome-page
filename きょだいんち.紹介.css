@@ -509,6 +509,97 @@ h2 {
 }
 
 
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9999;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #a77b32;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    background: #333;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 700px) {
+    .back-to-top {
+        right: 15px;
+        bottom: 20px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+
+
+
+/* CSSアレンジメント */
+
+/* TOPへ戻るボタン */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #a77b32;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+
+    text-decoration: none;
+    border-radius: 50%;
+    z-index: 9999;
+
+    transition: 0.3s;
+}
+
+/* マウスを乗せたとき */
+.back-to-top:hover {
+    background: #333333;
+    transform: translateY(-5px);
+}
+
+/* スマホ表示 */
+@media (max-width: 700px) {
+    .back-to-top {
+        right: 15px;
+        bottom: 20px;
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+    }
+}
+
+
+<header id="top">
+
+
+
+
 /* =========================
    PHONE
 ========================= */
