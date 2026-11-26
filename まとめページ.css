@@ -2,6 +2,7 @@
 /* =========================
    BASIC
 ========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -31,77 +32,73 @@ img {
 }
 
 
-/* BLACK HEADER */
+/* =========================
+   HEADER
+========================= */
+
 .site-header {
-  width: 100%;
-  background: #111111;
-  border-bottom: 1px solid #333333;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+    width: 100%;
+    background: #111111;
+    border-bottom: 1px solid #333333;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 66px;
+    margin: 0 auto;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* LOGO */
+
 .logo {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 21px;
-  font-weight: bold;
-  letter-spacing: 3px;
+    display: block;
+    flex-shrink: 0;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .logo span {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 4px;
-  color: #FFFFFF;
+    display: block;
+    color: #ffffff;
+    font-size: 9px;
+    letter-spacing: 4px;
 }
 
-/* MENU */
+/* PC NAVIGATION */
+
 .header-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .header-nav a {
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  transition: opacity .3s;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    transition: opacity 0.3s;
 }
 
 .header-nav a:hover {
-  opacity: 0.65;
+    opacity: 0.65;
 }
 
 /* HAMBURGER */
-.menu-toggle span {
-  background: #FFFFFF;
+
+.menu-toggle {
+    display: none;
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .header-nav {
-    background: #111111;
-  }
-
-  .header-nav a {
-    color: #FFFFFF;
-    border-bottom: 1px solid #333333;
-  }
-}
-
 
 
 /* =========================
@@ -112,26 +109,20 @@ img {
     width: 100%;
     min-height: 356px;
     padding: 65px 20px 70px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     overflow: hidden;
-
-    /* 黒系グラデーション */
     background: linear-gradient(
         105deg,
         #111111 0%,
         #252725 55%,
         #806849 100%
     );
-
     color: #ffffff;
 }
 
-/* 英字ラベル */
 .hero .lead,
 .hero .hero-label {
     margin: 0 0 22px;
@@ -139,31 +130,25 @@ img {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 4px;
-
     opacity: 0;
     animation: fadeUp 0.8s ease 0.2s forwards;
 }
 
-/* メインタイトル */
 .hero h1 {
     display: inline-block;
     margin: 8px 0 24px;
-
     font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 500;
     letter-spacing: 3px;
     line-height: 1.7;
-
     color: #ffffff;
     background: none;
     -webkit-text-fill-color: #ffffff;
-
     opacity: 0;
     animation: fadeUp 1s ease 0.4s forwards;
 }
 
-/* 飾り線 */
 .hero .heading-decoration {
     display: flex;
     align-items: center;
@@ -179,43 +164,35 @@ img {
     background: #d6ad68;
 }
 
-/* ダイヤ */
 .hero .decoration-diamond {
     color: #d6ad68;
     font-size: 12px;
 }
 
-/* 日本語キャッチコピー */
 .hero .hero-description,
 .hero .description {
     margin: 0;
-
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
-
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1.5px;
     line-height: 2;
-
     opacity: 0;
     animation: fadeUp 1s ease 0.8s forwards;
 }
 
-/* 英語サブコピー */
 .hero .hero-sub {
     margin: 10px 0 0;
-
     color: #d8d5cf;
     -webkit-text-fill-color: #d8d5cf;
-
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 1.5px;
-
     opacity: 0;
     animation: fadeUp 1s ease 1s forwards;
 }
+
 
 /* =========================
    ANIMATION
@@ -233,63 +210,11 @@ img {
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: auto;
-        padding: 55px 16px 60px;
-    }
-
-    .hero .lead,
-    .hero .hero-label {
-        font-size: 11px;
-        letter-spacing: 3px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-        letter-spacing: 1px;
-    }
-
-    .hero .hero-description,
-    .hero .description {
-        font-size: 13px;
-    }
-
-    .hero .hero-sub {
-        font-size: 10px;
-    }
-
-    .hero .heading-decoration span:not(.decoration-diamond) {
-        width: 38px;
-    }
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero .lead,
-    .hero .hero-label,
-    .hero h1,
-    .hero .hero-description,
-    .hero .description,
-    .hero .hero-sub {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-}
 
 /* =========================
    PARTNER SECTION
 ========================= */
+
 .partner-section {
     width: 88%;
     max-width: 1120px;
@@ -320,9 +245,11 @@ img {
     font-size: 14px;
 }
 
+
 /* =========================
    PARTNER CARD GRID
 ========================= */
+
 .partner-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -335,8 +262,7 @@ img {
     overflow: hidden;
     background: #ffffff;
     border: 1px solid #e9e5dd;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .partner-card:hover {
@@ -344,9 +270,11 @@ img {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
 }
 
+
 /* =========================
    CARD IMAGE
 ========================= */
+
 .partner-image-link {
     display: block;
     position: relative;
@@ -374,9 +302,11 @@ img {
     letter-spacing: 2px;
 }
 
+
 /* =========================
    CARD CONTENT
 ========================= */
+
 .partner-content {
     padding: 25px 27px 28px;
 }
@@ -404,9 +334,11 @@ img {
     line-height: 2;
 }
 
+
 /* =========================
    SHOP INFORMATION
 ========================= */
+
 .partner-info {
     padding: 15px 0;
     border-top: 1px solid #eeeeee;
@@ -427,9 +359,11 @@ img {
     color: #a77b32;
 }
 
+
 /* =========================
    DETAIL BUTTON
 ========================= */
+
 .detail-button {
     display: flex;
     align-items: center;
@@ -440,8 +374,7 @@ img {
     color: #8e6729;
     font-size: 13px;
     letter-spacing: 1px;
-    transition: background 0.3s ease,
-                color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .detail-button span {
@@ -458,9 +391,11 @@ img {
     transform: translateX(4px);
 }
 
+
 /* =========================
    ALL SHOP NAMES
 ========================= */
+
 .shop-name-list {
     margin-top: 80px;
     padding-top: 55px;
@@ -537,11 +472,13 @@ img {
     transform: translateX(5px);
 }
 
+
 /* =========================
-   BANNER
+   PARTNER BANNER
 ========================= */
+
 .partner-banner {
-   overflow: hidden;
+    overflow: hidden;
     width: 100%;
     padding: 75px 20px;
     text-align: center;
@@ -551,9 +488,8 @@ img {
         #c0c0c0 35%,
         #eeeeee 70%,
         #ffffff 100%
-    );    
+    );
 }
-
 
 .partner-banner h2 {
     margin: 0;
@@ -571,9 +507,11 @@ img {
     line-height: 2.2;
 }
 
-/* ========================================
-   エコカーレンタカー バナー
-======================================== */
+
+/* =========================
+   ECO CAR RENTAL BANNER
+========================= */
+
 .eco-rental-banner {
     width: 100%;
     margin: 0;
@@ -586,14 +524,6 @@ img {
     width: 100%;
     height: auto;
     object-fit: contain;
-}
-
-/* スマートフォン */
-@media (max-width: 760px) {
-    .eco-rental-banner img {
-        width: 100%;
-        height: auto;
-    }
 }
 
 
@@ -622,7 +552,6 @@ img {
 .footer-logo {
     display: inline-block;
     color: #ffffff;
-    text-decoration: none;
     font-size: 27px;
     font-weight: bold;
     letter-spacing: 3px;
@@ -667,7 +596,6 @@ img {
 
 .footer-nav a {
     color: #dddddd;
-    text-decoration: none;
     font-size: 13px;
     margin-bottom: 15px;
     transition: color 0.3s;
@@ -701,35 +629,13 @@ img {
     letter-spacing: 1.5px;
 }
 
-/* MOBILE */
 
-@media (max-width: 768px) {
-
-    .site-footer {
-        padding: 55px 7% 20px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 20px;
-    }
-
-    .footer-brand {
-        grid-column: 1 / -1;
-    }
-
-    .footer-message {
-        grid-column: 1 / -1;
-    }
-
-    .footer-bottom p {
-        font-size: 8px;
-    }
-}
 /* =========================
    TABLET
 ========================= */
+
 @media (max-width: 800px) {
+
     .partner-section {
         width: 90%;
         padding: 65px 0 80px;
@@ -756,40 +662,25 @@ img {
     }
 }
 
+
 /* =========================
-   MOBILE
+   MOBILE HEADER
 ========================= */
-
-
-/* ========================================
-   HEADER - スマートフォン調整
-======================================== */
 
 @media (max-width: 768px) {
 
     .site-header {
-        width: 100%;
         height: 65px;
-        position: sticky;
-        top: 0;
-        z-index: 9999;
     }
 
     .header-inner {
-        width: 100%;
         height: 65px;
+        min-height: 65px;
         padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
     }
 
     .logo {
-        display: block;
-        flex-shrink: 0;
         font-size: 20px;
-        line-height: 1.2;
         letter-spacing: 2px;
     }
 
@@ -798,17 +689,16 @@ img {
         letter-spacing: 3px;
     }
 
-    /* ハンバーガーメニュー */
     .menu-toggle {
         display: flex;
+        width: 40px;
+        height: 40px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 5px;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
         margin-left: auto;
+        padding: 8px;
         flex-shrink: 0;
         background: transparent;
         border: none;
@@ -822,110 +712,6 @@ img {
         background: #ffffff;
     }
 
-
-
-/* ========================================
-   HEADER PC・スマートフォン共通
-======================================== */
-
-.site-header {
-    width: 100%;
-    background: #111;
-    border-bottom: 1px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-}
-
-.header-inner {
-    max-width: 1200px;
-    min-height: 66px;
-    margin: 0 auto;
-    padding: 10px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: block;
-    flex-shrink: 0;
-    color: #fff;
-    font-size: 21px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.logo span {
-    display: block;
-    color: #fff;
-    font-size: 9px;
-    letter-spacing: 4px;
-}
-
-/* PCナビ */
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.header-nav a {
-    color: #fff;
-    font-size: 13px;
-    white-space: nowrap;
-}
-
-/* ハンバーガー */
-.menu-toggle {
-    display: none;
-}
-
-/* ========================================
-   スマートフォン
-======================================== */
-
-@media (max-width: 768px) {
-
-    .site-header {
-        height: 65px;
-    }
-
-    .header-inner {
-        height: 65px;
-        min-height: 65px;
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    /* ハンバーガーボタン */
-    .menu-toggle {
-        display: flex;
-        width: 40px;
-        height: 40px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        margin-left: auto;
-        padding: 8px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        flex-shrink: 0;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #fff;
-    }
-
-    /* 閉じた状態 */
     .header-nav {
         display: none;
         position: absolute;
@@ -933,75 +719,7 @@ img {
         left: 0;
         width: 100%;
         padding: 10px 20px;
-        background: #111;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-    }
-
-    /* 開いた状態 */
-    .header-nav.active {
-        display: flex;
-    }
-
-    .header-nav a {
-        display: block;
-        padding: 14px 5px;
-        border-bottom: 1px solid #333;
-    }
-}
-
-
-
-   
- 
-@media (max-width: 768px) {
-
-    .site-header {
-        height: 65px;
-    }
-
-    .header-inner {
-        height: 65px;
-        min-height: 65px;
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .menu-toggle {
-        display: flex;
-        width: 40px;
-        height: 40px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        margin-left: auto;
-        padding: 8px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        flex-shrink: 0;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #fff;
-    }
-
-    .header-nav {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        padding: 10px 20px;
-        background: #111;
+        background: #111111;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -1014,18 +732,27 @@ img {
     .header-nav a {
         display: block;
         padding: 14px 5px;
-        color: #fff;
-        font-size: 13px;
-        border-bottom: 1px solid #333;
+        color: #ffffff;
+        border-bottom: 1px solid #333333;
     }
-
 }
 
-/* 600px以下 */
+
+/* =========================
+   MOBILE LAYOUT
+========================= */
+
 @media (max-width: 600px) {
 
     .hero {
+        min-height: auto;
         padding: 70px 18px;
+    }
+
+    .hero .lead,
+    .hero .hero-label {
+        font-size: 11px;
+        letter-spacing: 3px;
     }
 
     .hero h1 {
@@ -1033,8 +760,17 @@ img {
         letter-spacing: 1px;
     }
 
-    .hero-description {
+    .hero .hero-description,
+    .hero .description {
         font-size: 12px;
+    }
+
+    .hero .hero-sub {
+        font-size: 10px;
+    }
+
+    .hero .heading-decoration span:not(.decoration-diamond) {
+        width: 38px;
     }
 
     .partner-section {
@@ -1094,8 +830,40 @@ img {
         padding: 60px 18px;
     }
 
-    .footer {
-        padding: 22px 6%;
+    .site-footer {
+        padding: 55px 6% 20px;
     }
 
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-brand,
+    .footer-message {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom p {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero .lead,
+    .hero .hero-label,
+    .hero h1,
+    .hero .hero-description,
+    .hero .description,
+    .hero .hero-sub {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }
