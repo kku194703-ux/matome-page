@@ -1,25 +1,30 @@
 
 "use strict";
 
-/*
-  動画を追加するときは、この配列に情報を追加してください。
-  file は videos フォルダ内の動画ファイル名です。
-*/
+/* ========================================
+   VIDEO DATA
+   動画を追加するときはここに登録
+======================================== */
 
 const videos = [
- {
-  title: "きょだいん家",
-  file: "videos/きょだいんち動画1313131313.mp4",
-  category: "店舗紹介",
-  description: "きょだいん家の紹介動画"
-},
+  {
+    title: "きょだいん家",
+    youtubeId: "hH0Xcg0WkRg",
+    category: "店舗紹介",
+    description: "きょだいん家の紹介動画"
+  },
+
   {
     title: "サンプル動画 02",
-    file: "videos/sample02.mp4",
+    youtubeId: "",
     category: "広告",
     description: "こちらもサンプル動画です。"
   }
 ];
+
+/* ========================================
+   HTML ELEMENTS
+======================================== */
 
 const videoGrid = document.getElementById("video-grid");
 const searchInput = document.getElementById("search-input");
@@ -28,16 +33,22 @@ const videoCount = document.getElementById("video-count");
 const emptyMessage = document.getElementById("empty-message");
 
 const playerModal = document.getElementById("player-modal");
-const videoPlayer = document.getElementById("video-player");
+const youtubePlayer = document.getElementById("youtube-player");
 const playerTitle = document.getElementById("player-title");
 const playerDescription = document.getElementById("player-description");
 const closePlayer = document.getElementById("close-player");
 
+/* ========================================
+   VIDEO LIST
+======================================== */
+
 function renderVideos() {
+
   const keyword = searchInput.value.trim().toLowerCase();
   const category = categoryFilter.value;
 
   const filteredVideos = videos.filter(video => {
+
     const matchesKeyword =
       video.title.toLowerCase().includes(keyword) ||
       video.description.toLowerCase().includes(keyword) ||
@@ -50,35 +61,48 @@ function renderVideos() {
   });
 
   videoGrid.innerHTML = "";
+
   videoCount.textContent = filteredVideos.length;
   emptyMessage.hidden = filteredVideos.length !== 0;
 
   filteredVideos.forEach(video => {
+
     const card = document.createElement("article");
     card.className = "video-card";
+
+    /* サムネイル */
 
     const thumb = document.createElement("button");
     thumb.className = "video-thumb";
     thumb.type = "button";
     thumb.setAttribute("aria-label", `${video.title}を再生`);
 
-    const preview = document.createElement("video");
-    preview.src = video.file;
-    preview.preload = "metadata";
-    preview.muted = true;
-    preview.playsInline = true;
-    preview.tabIndex = -1;
+    const image = document.createElement("img");
+
+    image.alt = video.title;
+    image.loading = "lazy";
+
+    if (video.youtubeId) {
+      image.src =
+        `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+    } else {
+      image.alt = "動画ID未登録";
+    }
 
     const playMark = document.createElement("span");
     playMark.className = "play-mark";
     playMark.textContent = "▶";
 
-    thumb.appendChild(preview);
+    thumb.appendChild(image);
     thumb.appendChild(playMark);
 
     thumb.addEventListener("click", () => {
-      openPlayer(video);
+      if (video.youtubeId) {
+        openPlayer(video);
+      }
     });
+
+    /* 動画情報 */
 
     const info = document.createElement("div");
     info.className = "video-info";
@@ -101,48 +125,66 @@ function renderVideos() {
     card.appendChild(info);
 
     videoGrid.appendChild(card);
+
   });
 }
 
+/* ========================================
+   YOUTUBE PLAYER
+======================================== */
+
 function openPlayer(video) {
-  videoPlayer.pause();
-  videoPlayer.src = video.file;
-  videoPlayer.load();
 
   playerTitle.textContent = video.title;
   playerDescription.textContent = video.description;
 
+  youtubePlayer.src =
+    `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0`;
+
   playerModal.classList.add("active");
   playerModal.setAttribute("aria-hidden", "false");
-
-  videoPlayer.play().catch(() => {
-    // 自動再生が許可されない場合は再生ボタンから再生できます。
-  });
 }
 
+/* ========================================
+   CLOSE PLAYER
+======================================== */
+
 function closeVideoPlayer() {
-  videoPlayer.pause();
-  videoPlayer.removeAttribute("src");
-  videoPlayer.load();
+
+  youtubePlayer.src = "";
 
   playerModal.classList.remove("active");
   playerModal.setAttribute("aria-hidden", "true");
 }
 
-searchInput.addEventListener("input", renderVideos);
-categoryFilter.addEventListener("change", renderVideos);
 closePlayer.addEventListener("click", closeVideoPlayer);
 
 playerModal.addEventListener("click", event => {
+
   if (event.target === playerModal) {
     closeVideoPlayer();
   }
+
 });
 
 document.addEventListener("keydown", event => {
+
   if (event.key === "Escape") {
     closeVideoPlayer();
   }
+
 });
+
+/* ========================================
+   SEARCH & CATEGORY
+======================================== */
+
+searchInput.addEventListener("input", renderVideos);
+
+categoryFilter.addEventListener("change", renderVideos);
+
+/* ========================================
+   INITIAL DISPLAY
+======================================== */
 
 renderVideos();
