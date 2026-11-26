@@ -571,6 +571,40 @@ img {
     line-height: 2.2;
 }
 
+/* ========================================
+   エコカーレンタカー バナー
+======================================== */
+
+.eco-rental-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.eco-rental-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+}
+
+/* スマートフォン */
+@media screen and (max-width: 768px) {
+
+    .eco-rental-banner {
+        width: 100%;
+    }
+
+    .eco-rental-banner img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
 
 /* =========================
    FOOTER
