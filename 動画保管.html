@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="動画を保管・管理するための動画ライブラリ">
+  <title>VIDEO ARCHIVE | 動画保管庫</title>
+  <link rel="stylesheet" href="動画保管.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <span class="logo-icon">▶</span>
+    <div>
+      <h1>VIDEO ARCHIVE</h1>
+      <p>PERSONAL VIDEO LIBRARY</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <span class="status">LOCAL STORAGE</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">MY COLLECTION</p>
+      <h2>動画ライブラリ</h2>
+      <p class="hero-text">動画を整理して、いつでも簡単に再生。</p>
+    </div>
+    <button class="add-button" id="openUpload">
+      ＋ 動画を追加
+    </button>
+  </section>
+
+  <section class="stats">
+    <div class="stat-box">
+      <span>登録動画数</span>
+      <strong id="videoCount">0</strong>
+    </div>
+    <div class="stat-box">
+      <span>カテゴリー数</span>
+      <strong id="categoryCount">0</strong>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <div class="search-box">
+      <span>⌕</span>
+      <input type="search" id="searchInput"
+        placeholder="動画タイトルを検索...">
+    </div>
+
+    <select id="categoryFilter">
+      <option value="all">すべてのカテゴリー</option>
+      <option value="仕事">仕事</option>
+      <option value="広告">広告</option>
+      <option value="店舗紹介">店舗紹介</option>
+      <option value="素材">素材</option>
+      <option value="その他">その他</option>
+    </select>
+  </section>
+
+  <section class="library">
+    <div class="section-heading">
+      <h3>MY VIDEOS</h3>
+      <span id="resultCount">0 VIDEOS</span>
+    </div>
+
+    <div class="video-grid" id="videoGrid">
+      <div class="empty">
+        <div class="empty-icon">▶</div>
+        <p>まだ動画が登録されていません。</p>
+        <span>「動画を追加」から登録してください。</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 動画追加画面 -->
+<div class="modal" id="uploadModal">
+  <div class="modal-content">
+    <button class="close-button" id="closeUpload">×</button>
+    <p class="eyebrow">ADD NEW VIDEO</p>
+    <h2>動画を登録する</h2>
+
+    <form id="uploadForm">
+      <label>動画ファイル</label>
+      <input type="file" id="videoFile" accept="video/*" required>
+
+      <label>動画タイトル</label>
+      <input type="text" id="videoTitle"
+        placeholder="動画のタイトルを入力" required>
+
+      <label>カテゴリー</label>
+      <select id="videoCategory">
+        <option value="仕事">仕事</option>
+        <option value="広告">広告</option>
+        <option value="店舗紹介">店舗紹介</option>
+        <option value="素材">素材</option>
+        <option value="その他">その他</option>
+      </select>
+
+      <label>説明文</label>
+      <textarea id="videoDescription"
+        placeholder="動画の説明を入力"></textarea>
+
+      <button type="submit" class="submit-button">
+        動画を登録する
+      </button>
+      <p class="form-note">
+        ※動画はこのブラウザのローカルデータベースに保存されます。
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- 動画再生画面 -->
+<div class="modal" id="playerModal">
+  <div class="player-content">
+    <button class="close-button" id="closePlayer">×</button>
+    <video id="mainPlayer" controls playsinline></video>
+    <div class="player-info">
+      <h2 id="playerTitle"></h2>
+      <p id="playerDescription"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>VIDEO ARCHIVE © 2026</p>
+</footer>
+
+<script src="動画保管.js"></script>
+</body>
+</html>
