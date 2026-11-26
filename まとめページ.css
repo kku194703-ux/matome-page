@@ -575,45 +575,34 @@ img {
    エコカーレンタカー バナー
 ======================================== */
 
+/* ========================================
+   エコカーレンタカー バナー
+======================================== */
+
 .partner-banner {
+    margin: 0;
     padding: 75px 20px 0;
 }
 
-/* バナー全体 */
 .eco-rental-banner {
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     overflow: hidden;
 }
 
-/* バナー画像 */
 .eco-rental-banner img {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 300px;
+    height: 650px;
     object-fit: cover;
     object-position: center;
 }
 
 /* スマートフォン */
 @media (max-width: 760px) {
-
-    .partner-banner {
-        padding: 45px 15px 0;
-    }
-
-    .eco-rental-banner {
-        margin: 0;
-    }
-
     .eco-rental-banner img {
-        width: 100%;
-        height: 100px;
-        max-height: none;
-        object-fit: cover;
-        object-position: center;
+        height: 180px;
     }
 }
 
