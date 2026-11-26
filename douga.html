@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="動画を一覧で管理・閲覧できる動画アーカイブです。">
+  <title>VIDEO ARCHIVE | 動画保管庫</title>
+  <link rel="stylesheet" href="DOUGA.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">VIDEO ARCHIVE</a>
+    <span class="header-sub">動画保管庫</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">VIDEO LIBRARY</p>
+      <h1>動画保管庫</h1>
+      <p class="hero-description">
+        保存された動画を一覧から選択して、いつでも再生できます。
+      </p>
+    </div>
+  </section>
+
+  <section class="archive-section">
+    <div class="archive-inner">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ARCHIVE LIST</p>
+          <h2>動画一覧</h2>
+        </div>
+        <p class="video-count"><span id="video-count">0</span> VIDEOS</p>
+      </div>
+
+      <div class="tools">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="動画タイトル・キーワードで検索"
+          aria-label="動画を検索"
+        >
+
+        <select id="category-filter" aria-label="カテゴリで絞り込み">
+          <option value="all">すべてのカテゴリ</option>
+          <option value="仕事">仕事</option>
+          <option value="広告">広告</option>
+          <option value="店舗紹介">店舗紹介</option>
+          <option value="素材">素材</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div id="video-grid" class="video-grid"></div>
+
+      <p id="empty-message" class="empty-message" hidden>
+        該当する動画がありません。
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>VIDEO ARCHIVE</p>
+  <small>© M-GROWTH</small>
+</footer>
+
+<!-- 動画再生モーダル -->
+<div class="player-modal" id="player-modal" aria-hidden="true">
+  <div class="player-panel">
+    <button class="close-button" id="close-player" aria-label="閉じる">×</button>
+    <h2 id="player-title">動画タイトル</h2>
+    <video id="video-player" controls playsinline preload="metadata"></video>
+    <p id="player-description"></p>
+  </div>
+</div>
+
+<script src="douga.js"></script>
+</body>
+</html>
