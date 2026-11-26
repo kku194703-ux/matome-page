@@ -36,7 +36,9 @@
           <p class="eyebrow">ARCHIVE LIST</p>
           <h2>動画一覧</h2>
         </div>
-        <p class="video-count"><span id="video-count">0</span> VIDEOS</p>
+        <p class="video-count">
+          <span id="video-count">0</span> VIDEOS
+        </p>
       </div>
 
       <div class="tools">
@@ -57,6 +59,7 @@
         </select>
       </div>
 
+      <!-- 動画一覧 -->
       <div id="video-grid" class="video-grid"></div>
 
       <p id="empty-message" class="empty-message" hidden>
@@ -72,16 +75,33 @@
   <small>© M-GROWTH</small>
 </footer>
 
-<!-- 動画再生モーダル -->
+<!-- YouTube動画再生モーダル -->
 <div class="player-modal" id="player-modal" aria-hidden="true">
   <div class="player-panel">
-    <button class="close-button" id="close-player" aria-label="閉じる">×</button>
+
+    <button
+      class="close-button"
+      id="close-player"
+      aria-label="閉じる"
+    >×</button>
+
     <h2 id="player-title">動画タイトル</h2>
-    <video id="video-player" controls playsinline preload="metadata"></video>
+
+    <!-- YouTube埋め込みプレーヤー -->
+    <iframe
+      id="youtube-player"
+      src=""
+      title="動画プレーヤー"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+
     <p id="player-description"></p>
+
   </div>
 </div>
 
 <script src="douga.js"></script>
+
 </body>
 </html>
