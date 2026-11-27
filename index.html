@@ -512,14 +512,28 @@
 
 
 
-     <!-- count content -->
-<div class="visitor-counter">
-    <div class="label">VISITORS</div>
-    <div id="count">000000</div>
-    <div class="caption">YOU'RE VISITOR No.</div>
+
+<!-- count content -->
+<div class="visitor-section">
+
+    <div class="visitor-counter">
+        <div class="label">VISITORS</div>
+        <div id="count">000000</div>
+        <div class="caption">YOU'RE VISITOR No.</div>
+    </div>
+
 </div>
 
 <style>
+/* 背景 */
+.visitor-section {
+    width: 100%;
+    background: #000;
+    padding: 1px 0;
+    box-sizing: border-box;
+}
+
+/* カウンター本体 */
 .visitor-counter {
     box-sizing: border-box;
     width: min(90%, 700px);
@@ -592,8 +606,7 @@ localStorage.setItem(key, count);
 document.getElementById("count").textContent =
     String(count).padStart(6, "0");
 </script>
-    </div>
-    
+   
 
 
 <script src="まとめページ.js"></script>
