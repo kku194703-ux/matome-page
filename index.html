@@ -510,7 +510,87 @@
 
 </footer>
 
-    
+  <!-- count content -->
+<div class="visitor-counter">
+    <div class="label">VISITORS</div>
+    <div id="count">000000</div>
+    <div class="caption">YOU'RE VISITOR No.</div>
+</div>
+
+<style>
+.visitor-counter {
+    box-sizing: border-box;
+    width: min(90%, 700px);
+    margin: 40px auto;
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    background: #b40000;
+    border: 8px solid #222;
+    border-radius: 18px;
+    box-shadow: 0 0 0 8px #f2c300, 0 12px 0 #222;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.visitor-counter::before {
+    content: "✦";
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    color: #f2c300;
+    font-size: 32px;
+}
+
+.visitor-counter::after {
+    content: "✦";
+    position: absolute;
+    right: 14px;
+    bottom: 8px;
+    color: #f2c300;
+    font-size: 32px;
+}
+
+.visitor-counter .label {
+    font-size: clamp(24px, 5vw, 44px);
+    letter-spacing: 6px;
+    color: #f2c300;
+    text-shadow: 3px 3px #222;
+}
+
+#count {
+    margin: 10px 0;
+    padding: 8px 12px;
+    color: #ff2929;
+    background: #171717;
+    border: 4px inset #777;
+    border-radius: 8px;
+    font-family: "Courier New", monospace;
+    font-size: clamp(48px, 12vw, 110px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    text-shadow: 0 0 12px #ff0000;
+}
+
+.visitor-counter .caption {
+    margin-top: 12px;
+    font-size: clamp(14px, 3vw, 24px);
+    letter-spacing: 3px;
+}
+</style>
+
+<script>
+const key = "visitCount";
+const count = Number(localStorage.getItem(key) || 0) + 1;
+
+localStorage.setItem(key, count);
+
+document.getElementById("count").textContent =
+    String(count).padStart(6, "0");
+</script>
+  
 
 
 <script src="まとめページ.js"></script>
